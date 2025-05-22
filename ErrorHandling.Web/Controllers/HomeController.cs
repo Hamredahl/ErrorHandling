@@ -10,9 +10,10 @@ public class HomeController : Controller
         return View();
     }
 
-    [HttpGet("/throw")]
+    [HttpGet("throw")]
     public IActionResult Throw()
     {
-        throw new Exception("SimulatedServerError");
+        throw new Exception("test");
+        return View();
     }
 }
