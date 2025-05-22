@@ -1,13 +1,18 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace ErrorHandling.Web.Controllers
+namespace ErrorHandling.Web.Controllers;
+
+public class HomeController : Controller
 {
-    public class HomeController : Controller
+    [HttpGet("")]
+    public IActionResult Index()
     {
-        [HttpGet("")]
-        public IActionResult Index()
-        {
-            return View();
-        }
+        return View();
+    }
+
+    [HttpGet("/throw")]
+    public IActionResult Throw()
+    {
+        throw new Exception("SimulatedServerError");
     }
 }
